@@ -12,7 +12,7 @@ void InitList(SqList& L)
 	L.length = 0;
 
 }
-int ListDelete(SqList &L , int i , int &e) 
+bool ListDelete(SqList &L , int i , int &e) 
 {	
 	if(i<1 || i>L.length)
 	return false;
@@ -20,7 +20,7 @@ int ListDelete(SqList &L , int i , int &e)
 	for (int j = i; j <L.length; j++)
 		L.data[j - 1] = L.data[j];                           //将第j个元素之后的元素前移
 	L.length--;
-	return e;
+	return true;
 }
 
 int main() {
